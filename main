@@ -37,7 +37,7 @@ virtual string getClass()
 virtual double getArea()=0;
 
  void printDetails() {
-cout <<"This is a "<<getClass()<<". It has "<<points<<" points and length: "<<length<<" and area "<<getArea()<<"\n";
+cout <<"This is a "<<getClass()<<". It has "<<points<<" points and length: "<< kati allo<<" and area "<<getArea()<<"\n";
     }
 
 
