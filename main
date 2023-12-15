@@ -1,0 +1,139 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Shape
+{
+
+    private:
+        int points;
+        double length;
+
+protected:
+Shape(int p, double l)
+{
+points=p;
+length=l;
+}
+
+
+public :
+Shape()
+{
+    //ctor
+}
+
+
+ ~Shape()
+{
+    //dtor
+}
+
+virtual string getClass()
+{
+  return "Shape";
+}
+
+virtual double getArea()=0;
+
+ void printDetails() {
+cout <<"This is a "<<getClass()<<". It has "<<points<<" points and length: "<<length<<" and area "<<getArea()<<"\n";
+    }
+
+
+};
+
+class Rectangle: public Shape
+{
+
+public:
+Rectangle (double l):Shape(4,l)
+{
+
+};
+
+
+string getClass()
+{
+  return "Rectangle";
+}
+
+double getArea()
+{
+    return 4;
+}
+};
+
+
+class Triangle: public Shape
+{
+
+public:
+Triangle (double l):Shape(3,l)
+{
+
+};
+
+
+string getClass()
+{
+  return "Triangle";
+}
+
+double getArea()
+{
+    return 3;
+}
+};
+
+
+class Circle: public Shape
+{
+
+public:
+Circle (double l):Shape(1,l)
+{
+
+};
+
+
+string getClass()
+{
+  return "Circle";
+}
+
+double getArea()
+{
+    return 1;
+}
+};
+
+
+int  main()
+{
+  Shape *s;
+  Rectangle r(2);
+  Triangle t(3);
+  Circle c(4);
+
+  /**
+  cout<<s.getClass()<<endl;
+  cout<<r.getClass()<<endl;
+  cout<<t.getClass()<<endl;
+  cout<<c.getClass()<<endl;
+
+  s = c  ;
+  cout<<s.getClass()<<endl;
+  **/
+
+  //s.printDetails();
+  r.printDetails();
+  t.printDetails();
+  c.printDetails();
+
+  s = new Circle(4) ;
+  s->printDetails();
+
+
+  return 0;
+}
